@@ -1,0 +1,53 @@
+<!DOCYTPE html>
+<Html>
+    <head>
+        <title>Aysu Öztürk</title>
+		<style type="text/css">
+		body{
+			font-family: "Helvetica", Sans-Serif;
+			background-image: url("background-image.jpg");
+			color:white;
+		}
+		</style>
+    </head>
+    <body>
+		<center>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br>
+			<p>WEB PROGRAMLAMA PROJE - AYSU ÖZTÜRK</p>
+			<form name="girdiform">
+				Kelime Giriniz:
+				<input type="text" name="girdi"/> <br/><br/>
+				<button id="gonder" onclick="random()">Harfleri Karıştır</button>
+			</form>
+		</center>
+		<script type="text/javascript">
+		
+			gonder.onclick = function()
+			{
+				var girdiformu = document.forms.girdiform;
+				var kelime = girdiformu.elements.girdi.value;
+				
+				function random(length)
+				{
+					var sonuc   = "";
+					var karakter = kelime;
+					var uzunluk  = karakter.length;
+				
+					for ( var i = 0; i < length; i++ ) 
+					{
+						sonuc += karakter.charAt(Math.floor(Math.random() * uzunluk));
+					}
+				
+					return sonuc;
+				}
+				
+				document.write("<center><br><br><br><br><br><br><br><br><br><br><br><br><br><div style='font-family: Helvetica, sans-serif;'><h3>Kelime : " + kelime + "</h3>");
+				document.write("<p>1 Karakterli : " + random(1) + "</p>");
+				document.write("<p>2 Karakterli : " + random(2) + "</p>");
+				document.write("<p>3 Karakterli : " + random(3) + "</p>");
+				document.write("<p>4 Karakterli : " + random(4) + "</p></div></center>");
+			}
+			
+		</script>
+    </body>
+</html>
